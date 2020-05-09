@@ -1,17 +1,26 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+// import SlideImages from "./components/gallery";
+
 
 export default class EditHome extends Component {
 
     constructor(props) {
         super(props);
 
+        this.onChangeHomePlanName = this.onChangeHomePlanName.bind(this);
+        this.onChangeHomeBedrooms = this.onChangeHomeBedrooms.bind(this);
+        this.onChangeHomeBathrooms = this.onChangeHomeBathrooms.bind(this);
+        this.onChangeHomeSqfeet = this.onChangeHomeSqfeet.bind(this);
+        // this.onChangeHomeCompleted = this.onChangeHomeCompleted.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
         this.state = {
             home_planName: '',
             home_bedrooms: '',
             home_bathrooms: '',
-            home_completed: false
+            // home_completed: false
         }
     }
 
@@ -23,8 +32,7 @@ export default class EditHome extends Component {
                     home_bedrooms: response.data.home_bedrooms,
                     home_bathrooms: response.data.home_bathrooms,
                     home_sqfeet: response.data.home_sqfeet,
-                    home_completed: response.data.home_completed
-
+                    // home_completed: response.data.home_completed
                 })
             })
             .catch(function(error) {
@@ -56,10 +64,25 @@ export default class EditHome extends Component {
         });
     }
 
-    onChangeHomeCompleted(e) {
-        this.setState({
-            home_completed: e.target.value 
-        })
+    // onChangeHomeCompleted(e) {
+    //     this.setState({
+    //         home_completed: !this.state.home_completed 
+    //     })
+    // }
+
+    onSubmit(e) {
+        e.preventDefault();
+        const obj = {
+            home_planName: this.state.home_planName,
+            home_bedrooms: this.state.home_bedrooms,
+            home_bathrooms: this.state.home_bathrooms,
+            home_sqfeet: this.state.home_sqfeet,
+            // home_completed: this.state.home_completed
+        };
+        axios.post('http://localhost:4000/homes/update/'+this.props.match.params.id, obj)
+            .then(res => console.log(res.data));
+
+        this.props.history.push('/');
     }
     
     render() {
@@ -103,7 +126,7 @@ export default class EditHome extends Component {
                                 />
                     </div>
 
-                    <div>
+                    {/* <div>
                         <div className="form-check">
                             <input type="checkbox"
                             className="form-check-input"
@@ -116,12 +139,13 @@ export default class EditHome extends Component {
                             <label className="form-check-label" htmlFor="completedCheckbox">
                                 COMPLETED 
                             </label>
-                        </div>
+                        </div> */}
                         <br/>
+
+                        
                         <div className="form-group">
                             <input type="SUBMIT" value="UPDATE HOME" className="btn btn-primary"/>
                         </div>
-                    </div>
                 </form>
             </div>
         )
