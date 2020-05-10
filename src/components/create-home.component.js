@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import axios from "axios";
 
 // import SlideImages from "./components/gallery";
+// import EditHome from "./components/edit-home.component";
+// import HomesList from "./components/homes-list.component";
+
 
 export default class CreateHome extends Component {
 
@@ -149,7 +152,6 @@ export default class CreateHome extends Component {
                             </label>
                         </div>
                     </div>
-
                     <div className="form-group">
                         <div className="radioButtons">
                             <label>
@@ -158,7 +160,6 @@ export default class CreateHome extends Component {
                             </label>
                         </div>
                     </div>
-
                     <div className="form-group">
                         <div className="radioButtons">
                             <label>

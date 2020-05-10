@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+import CreateHome from "./create-home.component";
+import EditHome from "./edit-home.component";
 // import SlideImages from "./components/gallery";
 
 const Home = props => (
     <tr>
-        <td className={props.home.home_completed ? 'DELETED' : ''}>{props.home.home_planName}</td>
-        <td className={props.home.home_completed ? 'DELETED' : ''}>{props.home.home_bedrooms}</td>
-        <td className={props.home.home_completed ? 'DELETED' : ''}>{props.home.home_bathrooms}</td>
-        <td className={props.home.home_completed ? 'DELETED' : ''}>{props.home.home_sqfeet}</td>
+        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_planName}</td>
+        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_bedrooms}</td>
+        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_bathrooms}</td>
+        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_sqfeet}</td>
         <td>
             <Link to={"/edit/"+props.home._id}>EDIT</Link>
             {/* <br/>

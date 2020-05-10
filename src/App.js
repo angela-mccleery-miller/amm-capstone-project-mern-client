@@ -9,7 +9,7 @@ import HomesList from "./components/homes-list.component";
 
 // import NavigationContainer from "../navigation/navigation-container";
 
-// import Logo from "./images/logo.png"
+// import Logo from "./images/logo.png";
 
 // const icon = (
 //   <span class="logo">
@@ -26,8 +26,12 @@ class App extends Component {
 
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             {/* <Navbar brand={icon} toggleNavKey={0}></Navbar> */}
+            {/* <a className="navbar-brand" target="_blank">
+              <img src={logo} width="30" height="30" alt="IcelandicLogo" />
+            </a> */}
                     
             <Link to="/" className="navbar-brand">Icelandic Custom Homes</Link>
+            
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
                 <li className="navbar-item">
