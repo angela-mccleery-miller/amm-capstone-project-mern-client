@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import CreateHome from "./create-home.component";
-import EditHome from "./edit-home.component";
+// import CreateHome from "./create-home.component";
+// import EditHome from "./edit-home.component";
 // import SlideImages from "./components/gallery";
 
 const Home = props => (
@@ -41,13 +41,13 @@ componentDidMount() {
 }
 
 componentDidUpdate(){
-    axios.get('http://localhost:4000/homes/')
-    .then(response => {
-        this.setState({homes: response.data})
-    })
-    .catch(function (error) {
-        console.log(error);
-    })
+    // axios.get('http://localhost:4000/homes/')
+    // .then(response => {
+    //     this.setState({homes: response.data})
+    // })
+    // .catch(function (error) {
+    //     console.log(error);
+    // })
 }
 
 homeList() {

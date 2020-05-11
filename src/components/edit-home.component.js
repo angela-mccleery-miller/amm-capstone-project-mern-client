@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 
 // import SlideImages from "./components/gallery";
-import CreateHome from "./create-home.component";
-import HomesList from "./homes-list.component";
+// import CreateHome from "./create-home.component";
+// import HomesList from "./homes-list.component";
 
 export default class EditHome extends Component {
 
