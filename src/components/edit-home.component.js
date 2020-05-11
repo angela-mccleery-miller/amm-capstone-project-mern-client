@@ -4,6 +4,7 @@ import axios from "axios";
 // import SlideImages from "./components/gallery";
 // import CreateHome from "./create-home.component";
 // import HomesList from "./homes-list.component";
+// import GalleryInfo from "./gallery"
 
 export default class EditHome extends Component {
 

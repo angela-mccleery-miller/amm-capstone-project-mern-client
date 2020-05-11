@@ -18,7 +18,7 @@ const Home = props => (
 
 
         <td>
-            <Link to={"/edit/"+props.home._id}>EDIT</Link>
+            <Link to={"/edit/"+props.home._id} className="editHome">EDIT</Link>
             {/* <br/>
             <Link to={"/delete/"+props.home._id}>DELETE</Link> */}
         </td>
@@ -31,9 +31,7 @@ export default class HomesList extends Component {
         super(props);
         this.state = {homes: []};
     } 
-
-
-    
+   
 
 componentDidMount() {
     axios.get('http://localhost:4000/homes/')

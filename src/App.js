@@ -1,35 +1,34 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "C:/C/Users/Angela Miller/Desktop/CODING/REACT/amm-capstone-project/mern-client/src/styles/homepage.scss"
 
 import CreateHome from "./components/create-home.component";
 import EditHome from "./components/edit-home.component";
 import HomesList from "./components/homes-list.component";
-// import SlideImages from "./components/gallery";
+import logo from "./images/logo.png";
+import GalleryNavContainer from './components/gallery';
+
 
 // import NavigationContainer from "../navigation/navigation-container";
 
-// import Logo from "./images/logo.png";
 
-// const icon = (
-//   <span class="logo">
-//     <a href="/">
-//       <img src="C:\C\Users\Angela Miller\Desktop\CODING\REACT\amm-capstone-project\mern-client\src\images\logo.png" height="33" width="120" alt="text here" /></a>
-//   </span>
-// );
+export default class App extends Component {
+  // constructor() {
+  //   super();
 
-class App extends Component {
+  // }
+
   render() {
     return (
         <Router>
         <div className="container">
-
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            {/* <Navbar brand={icon} toggleNavKey={0}></Navbar> */}
-            {/* <a className="navbar-brand" target="_blank">
-              <img src={logo} width="30" height="30" alt="IcelandicLogo" />
-            </a> */}
-                    
+          <div className='logo'>
+              <img id="logoImg" src={logo} alt="myLogo" />
+          </div>
+        
+          <nav id="navHome" className="navbar navbar-expand-lg navbar-light">
+                                
             <Link to="/" className="navbar-brand">Icelandic Custom Homes</Link>
             
             <div className="collapse navbar-collapse">
@@ -47,14 +46,11 @@ class App extends Component {
               </ul>
             </div>
           </nav>
-          
-          {/* nav
-          <h2>Home Builders App</h2> */}
-          {/* <Route path="/images/logo.png" exact component={Logo} /> */}
+    
           <Route path="/" exact component={HomesList} />
-          <Route path="/edit/:id" component={EditHome} />
           <Route path="/create" component={CreateHome} />
-          {/* <Route path="/gallery" component={Gallery} /> */}
+          <Route path="/edit/:id" component={EditHome} />
+          <Route path="/gallery" component={GalleryNavContainer} />
         </div>
        
       </Router>
@@ -62,5 +58,3 @@ class App extends Component {
   }
 }
  
-
-export default App;
