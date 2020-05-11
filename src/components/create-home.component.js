@@ -11,98 +11,143 @@ export default class CreateHome extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangeHomeImg = this.onChangeHomeImg.bind(this);
-        this.onChangeHomePlanName = this.onChangeHomePlanName.bind(this);
-        this.onChangeHomeBedrooms = this.onChangeHomeBedrooms.bind(this);
-        this.onChangeHomeBathrooms = this.onChangeHomeBathrooms.bind(this);
-        this.onChangeHomeSqfeet = this.onChangeHomeSqfeet.bind(this);
+        this.onChangePlanName = this.onChangePlanName.bind(this);
+        this.onChangeBedrooms = this.onChangeBedrooms.bind(this);
+        this.onChangeBathrooms = this.onChangeBathrooms.bind(this);
+        this.onChangeSqfeet = this.onChangeSqfeet.bind(this);
+        this.onChangeUrl = this.onChangeUrl.bind(this);
+        this.onChangeFp1_Url = this.onChangeFp1Url.bind(this);
+        this.onChangeFp2_Url = this.onChangeFp2Url.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
            
         this.state = {
-            home_img: '',
-            home_planName: '',
-            home_bedrooms: '',
-            home_bathrooms: '',
-            home_sqfeet: '',
-            // home_completed: false
+            
+            planName: '',
+            bedrooms: '',
+            bathrooms: '',
+            sqfeet: '',
+            url: '',
+            fp1_url: '',
+            fp2_url: '',
+            // completed: false
         }
     }
   
    
-        onChangeHomeImg(e) {
+    onChangePlanName(e) {
         this.setState({
-            home_img: e.target.value
+            planName: e.target.value
         })
     }
 
-    onChangeHomePlanName(e) {
+    onChangeBedrooms(e) {
         this.setState({
-            home_planName: e.target.value
+            bedrooms: e.target.value
         })
     }
 
-    onChangeHomeBedrooms(e) {
+    onChangeBathrooms(e) {
         this.setState({
-            home_bedrooms: e.target.value
+            bathrooms: e.target.value
         })
     }
 
-    onChangeHomeBathrooms(e) {
+    onChangeSqfeet(e) {
         this.setState({
-            home_bathrooms: e.target.value
+            sqfeet: e.target.value
         })
     }
 
-    onChangeHomeSqfeet(e) {
+    onChangeUrl(e) {
         this.setState({
-            home_sqfeet: e.target.value
+            url: e.target.value
         })
     }
+
+    onChangeFp1Url(e) {
+        this.setState({
+            fp1_url: e.target.value
+        })
+    }
+
+    onChangeFp2Url(e) {
+        this.setState({
+            fp2_url: e.target.value
+        })
+    }
+
 
     onSubmit(e) {
         e.preventDefault();
 
+        console.log(`Plan Name: ${this.state.planName}`);
+        console.log(`Number of Bedrooms: ${this.state.bedrooms}`);
+        console.log(`Number of Bathrooms: ${this.state.bathrooms}`);
+        console.log(`Square Footage: ${this.state.sqfeet}`)
+        console.log(`Home Image: ${this.state.url}`)
+        console.log(`Floor Plan 1: ${this.state.fp1_url}`)
+        console.log(`Floor Plan 2: ${this.state.fp2_url}`)
         console.log(`Form Submitted:`);
-        console.log(`Home Image: ${this.state.home_img}`)
-        console.log(`Home Plan Name: ${this.state.home_planName}`);
-        console.log(`Number of Bedrooms: ${this.state.home_bedrooms}`);
-        console.log(`Number of Bathrooms: ${this.state.home_bathrooms}`);
-        // console.log(`Home Completed: ${this.state.home_completed}`);
+        // console.log(`Completed: ${this.state.completed}`);
 
         const newHome = {
-            home_img: this.state.home_img,
-            home_planName: this.state.home_planName,
-            home_bedrooms: this.state.home_bedrooms,
-            home_bathrooms: this.state.home_bathrooms,
-            home_sqfeet: this.state.home_sqfeet,
-            // home_completed: this.state.home_completed,
+            
+            planName: this.state.planName,
+            bedrooms: this.state.bedrooms,
+            bathrooms: this.state.bathrooms,
+            sqfeet: this.state.sqfeet,
+            url: this.state.url,
+            fp1_url: this.state.fp1_url,
+            fp2_url: this.state.fp2_url,
+            // completed: this.state.completed,
         }
 
         axios.post('http://localhost:4000/homes/add', newHome)
             .then(res => console.log(res.data));
 
         this.setState({
-            home_img: '',
-            home_planName: '',
-            home_bedrooms: '',
-            home_bathrooms: '',
-            home_sqfeet: '',
-            // home_completed: false
+            
+            planName: '',
+            bedrooms: '',
+            bathrooms: '',
+            sqfeet: '',
+            url: '',
+            fp1_url: '',
+            fp2_url: '',
+            // completed: false
         })
     }
 
     render() {
         return (
             <div style={{marginTop: 40}}>
-                <h3>Create New Home Listing</h3>
+                <h3>Create a New Home Listing</h3>
                 <form onSubmit={this.onSubmit}>
 
                     <div className="form-group">
-                        <label>Home Image</label>
-                        <input type="img"
+                        <label>Home Image URL</label>
+                        <input type="string"
                                 className="form-control"
-                                value={this.state.home_img}
-                                onChange={this.onChangeHomeImg}
+                                value={this.state.url}
+                                onChange={this.onChangeUrl}
+                                />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Floor Plan 1 URL</label>
+                        <input type="string"
+                                className="form-control"
+                                value={this.state.fp1_url}
+                                onChange={this.onChangeFp1Url}
+                                />
+                    </div>
+
+                   <div className="form-group">
+                        <label>Floor Plan 2 URL</label>
+                        <input type="string"
+                                className="form-control"
+                                value={this.state.fp2_url}
+                                onChange={this.onChangeFp2Url}
                                 />
                     </div>
 
@@ -110,8 +155,8 @@ export default class CreateHome extends Component {
                         <label>Home Plan Name</label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_planName}
-                                onChange={this.onChangeHomePlanName}
+                                value={this.state.planName}
+                                onChange={this.onChangePlanName}
                                 />
                     </div>
 
@@ -119,8 +164,8 @@ export default class CreateHome extends Component {
                         <label>Number of Bedrooms</label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_bedrooms}
-                                onChange={this.onChangeHomeBedrooms}
+                                value={this.state.bedrooms}
+                                onChange={this.onChangeBedrooms}
                                 />
                     </div>
 
@@ -128,8 +173,8 @@ export default class CreateHome extends Component {
                         <label>Number of Bathrooms</label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_bathrooms}
-                                onChange={this.onChangeHomeBathrooms}
+                                value={this.state.bathrooms}
+                                onChange={this.onChangeBathrooms}
                                 />
                     </div>
 
@@ -138,8 +183,8 @@ export default class CreateHome extends Component {
                         <label>Square Footage</label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_sqfeet}
-                                onChange={this.onChangeHomeSqfeet}
+                                value={this.state.sqfeet}
+                                onChange={this.onChangeSqfeet}
                                 />
                     </div>
   

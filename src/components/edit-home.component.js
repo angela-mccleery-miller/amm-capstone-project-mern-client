@@ -10,18 +10,26 @@ export default class EditHome extends Component {
     constructor(props) {
         super(props);
 
-        this.onChangeHomePlanName = this.onChangeHomePlanName.bind(this);
-        this.onChangeHomeBedrooms = this.onChangeHomeBedrooms.bind(this);
-        this.onChangeHomeBathrooms = this.onChangeHomeBathrooms.bind(this);
-        this.onChangeHomeSqfeet = this.onChangeHomeSqfeet.bind(this);
-        // this.onChangeHomeCompleted = this.onChangeHomeCompleted.bind(this);
+        this.onChangePlanName = this.onChangePlanName.bind(this);
+        this.onChangeBedrooms = this.onChangeBedrooms.bind(this);
+        this.onChangeBathrooms = this.onChangeBathrooms.bind(this);
+        this.onChangeSqfeet = this.onChangeSqfeet.bind(this);
+        this.onChangeUrl = this.onChangeUrl.bind(this);
+        this.onChangeFp1Url = this.onChangeFp1Url.bind(this);
+        this.onChangeFp2Url = this.onChangeFp2Url.bind(this);
+
+        // this.onChangeCompleted = this.onChangeCompleted.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
-            home_planName: '',
-            home_bedrooms: '',
-            home_bathrooms: '',
-            // home_completed: false
+            planName: '',
+            bedrooms: '',
+            bathrooms: '',
+            sqfeet: '',
+            url: '',
+            fp1_url: '',
+            fp2_url: '',
+            // completed: false
         }
     }
 
@@ -29,11 +37,15 @@ export default class EditHome extends Component {
         axios.get('http://localhost:4000/homes/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    home_planName: response.data.home_planName,
-                    home_bedrooms: response.data.home_bedrooms,
-                    home_bathrooms: response.data.home_bathrooms,
-                    home_sqfeet: response.data.home_sqfeet,
-                    // home_completed: response.data.home_completed
+                    planName: response.data.planName,
+                    bedrooms: response.data.bedrooms,
+                    bathrooms: response.data.bathrooms,
+                    sqfeet: response.data.sqfeet,
+                    url: response.data.url,
+                    fp1_url: response.data.fp1_url,
+                    fp2_url: response.data.fp2_url,
+
+                    // completed: response.data.completed
                 })
             })
             .catch(function(error) {
@@ -41,44 +53,66 @@ export default class EditHome extends Component {
             })
     }
 
-    onChangeHomePlanName(e) {
+    onChangePlanName(e) {
         this.setState({
-            home_planName: e.target.value
+            planName: e.target.value
         });
     }
 
-    onChangeHomeBedrooms(e) {
+    onChangeBedrooms(e) {
         this.setState({
-            home_bedrooms: e.target.value
+            bedrooms: e.target.value
         });
     }
     
-    onChangeHomeBathrooms(e) {
+    onChangeBathrooms(e) {
         this.setState({
-            home_bathrooms: e.target.value
+            bathrooms: e.target.value
         });
     }
 
-    onChangeHomeSqfeet(e) {
+    onChangeSqfeet(e) {
         this.setState({
-            home_sqfeet: e.target.value
+            sqfeet: e.target.value
         });
     }
 
-    // onChangeHomeCompleted(e) {
+    onChangeUrl(e) {
+        this.setState({
+            url: e.target.value
+        });
+    }
+
+    onChangeFp1Url(e) {
+        this.setState({
+            fp1_url: e.target.value
+        });
+    }
+
+    onChangeFp2Url(e) {
+        this.setState({
+            fp2_url: e.target.value
+        });
+    }
+
+    // onChangeCompleted(e) {
     //     this.setState({
-    //         home_completed: !this.state.home_completed 
+    //         completed: !this.state.completed 
     //     })
     // }
+
 
     onSubmit(e) {
         e.preventDefault();
         const obj = {
-            home_planName: this.state.home_planName,
-            home_bedrooms: this.state.home_bedrooms,
-            home_bathrooms: this.state.home_bathrooms,
-            home_sqfeet: this.state.home_sqfeet,
-            // home_completed: this.state.home_completed
+            planName: this.state.planName,
+            bedrooms: this.state.bedrooms,
+            bathrooms: this.state.bathrooms,
+            sqfeet: this.state.sqfeet,
+            url: this.state.url,
+            fp1_url: this.state.fp1_url,
+            fp2_url: this.state.fp2_url,
+            // completed: this.state.completed
         };
         axios.post('http://localhost:4000/homes/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
@@ -95,8 +129,8 @@ export default class EditHome extends Component {
                         <label>Plan Name: </label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_planName}
-                                onChange={this.onChangeHomePlanName}
+                                value={this.state.planName}
+                                onChange={this.onChangePlanName}
                                 />
                     </div>
 
@@ -104,8 +138,8 @@ export default class EditHome extends Component {
                         <label>Bedrooms: </label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_bedrooms}
-                                onChange={this.onChangeHomeBedrooms}
+                                value={this.state.bedrooms}
+                                onChange={this.onChangeBedrooms}
                                 />
                     </div>
 
@@ -113,8 +147,8 @@ export default class EditHome extends Component {
                         <label>Bathrooms: </label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_bathrooms}
-                                onChange={this.onChangeHomeBathrooms}
+                                value={this.state.bathrooms}
+                                onChange={this.onChangeBathrooms}
                                 />
                     </div>
 
@@ -122,8 +156,35 @@ export default class EditHome extends Component {
                         <label>Square Feet: </label>
                         <input type="text"
                                 className="form-control"
-                                value={this.state.home_sqfeet}
-                                onChange={this.onChangeHomeSqfeet}
+                                value={this.state.sqfeet}
+                                onChange={this.onChangeSqfeet}
+                                />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Home Image URL: </label>
+                        <input type="text"
+                                className="form-control"
+                                value={this.state.url}
+                                onChange={this.onChangeUrl}
+                                />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Floor Plan 1 URL: </label>
+                        <input type="text"
+                                className="form-control"
+                                value={this.state.fp1_url}
+                                onChange={this.onChangeFp1Url}
+                                />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Floor Plan 2 URL: </label>
+                        <input type="text"
+                                className="form-control"
+                                value={this.state.fp2_url}
+                                onChange={this.onChangeFp2Url}
                                 />
                     </div>
 
@@ -133,9 +194,9 @@ export default class EditHome extends Component {
                             className="form-check-input"
                             id="completedCheckbox"
                             name="completedCheckbox"
-                            onChange={this.onChangeHomeCompleted}
-                            checked={this.state.home_completed}
-                            value={this.state.home_completed}
+                            onChange={this.onChangeCompleted}
+                            checked={this.state.completed}
+                            value={this.state.completed}
                             />
                             <label className="form-check-label" htmlFor="completedCheckbox">
                                 COMPLETED 

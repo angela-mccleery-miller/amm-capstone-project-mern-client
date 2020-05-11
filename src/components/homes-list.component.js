@@ -8,10 +8,15 @@ import axios from 'axios';
 
 const Home = props => (
     <tr>
-        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_planName}</td>
-        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_bedrooms}</td>
-        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_bathrooms}</td>
-        <td className={props.home.home_completed ? 'EDITED' : ''}>{props.home.home_sqfeet}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.planName}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.bedrooms}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.bathrooms}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.sqfeet}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.url}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.fp1_url}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.fp2_url}</td>
+
+
         <td>
             <Link to={"/edit/"+props.home._id}>EDIT</Link>
             {/* <br/>
@@ -67,6 +72,9 @@ homeList() {
                             <th>BEDROOMS</th>
                             <th>BATHROOMS</th>
                             <th>SQUARE FEET</th>
+                            <th>EXT IMG</th>
+                            <th>FP 1</th>
+                            <th>FP 2</th>
                         </tr>
                     </thead>
                     <tbody>
