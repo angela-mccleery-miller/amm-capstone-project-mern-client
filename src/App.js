@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "C:/C/Users/Angela Miller/Desktop/CODING/REACT/amm-capstone-project/mern-client/src/styles/homepage.scss"
+
+import "C:/C/Users/Angela Miller/Desktop/CODING/REACT/amm-capstone-project/mern-client/src/styles/homepage.scss";
+import "C:/C/Users/Angela Miller/Desktop/CODING/REACT/amm-capstone-project/mern-client/src/styles/gallery.scss";
 
 import CreateHome from "./components/create-home.component";
 import EditHome from "./components/edit-home.component";

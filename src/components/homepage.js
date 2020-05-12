@@ -10,9 +10,7 @@ import HomesList from "./components/homes-list.component";
 class LandingPage extends Component {
   render() {
     return (
-        // <div className="logo">
-        //     <img src={Logo} />
-        // </div>
+     
         <Router>
         <div className="container">
          
