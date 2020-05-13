@@ -19,8 +19,8 @@ const Home = props => (
 
         <td>
             <Link to={"/edit/"+props.home._id} className="editHome">EDIT</Link>
-            {/* <br/>
-            <Link to={"/delete/"+props.home._id}>DELETE</Link> */}
+           
+            {/* <Link to={"/delete/"+props.home._id}>DELETE</Link> */}
         </td>
     </tr>
 )
@@ -30,8 +30,7 @@ export default class HomesList extends Component {
     constructor(props) {
         super(props);
         this.state = {homes: []};
-    } 
-   
+    }    
 
 componentDidMount() {
     axios.get('http://localhost:4000/homes/')
@@ -62,7 +61,7 @@ homeList() {
     render() {
         return (
             <div>
-                <h3>Current Home Inventory</h3>
+                <h2>Current Home Inventory</h2>
                 <table className="table table-striped" style={{ marginTop: 30 }}>
                     <thead>
                         <tr>
@@ -70,6 +69,7 @@ homeList() {
                             <th>BEDROOMS</th>
                             <th>BATHROOMS</th>
                             <th>SQUARE FEET</th>
+                            <th>EDIT HOME</th>
                             {/* <th>EXT IMG</th>
                             <th>FP 1</th>
                             <th>FP 2</th> */}

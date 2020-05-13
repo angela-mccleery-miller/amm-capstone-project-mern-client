@@ -1,3 +1,9 @@
+h3 {
+    padding-top: 65px;
+    // display: flex;
+}
+
+
 .btn-primary {
     background-color: #6a8b9b;
     color: white
@@ -13,4 +19,17 @@ button {
     color: white;
     border: thin solid rgb(78, 78, 78);
 
+}
+
+.card-wrapper {
+    // padding: 20px;
+    float: left;
+    align-content: center;
+    // display: inline;
+
+    img {
+        border: thin solid black;
+        border-radius: 8px;
+    }
+    
 }

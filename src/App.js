@@ -9,7 +9,7 @@ import CreateHome from "./components/create-home.component";
 import EditHome from "./components/edit-home.component";
 import HomesList from "./components/homes-list.component";
 import logo from "./images/logo.png";
-import GalleryNavContainer from './components/gallery';
+import GalleryContainer from './components/gallery';
 
 
 // import NavigationContainer from "../navigation/navigation-container";
@@ -52,7 +52,7 @@ export default class App extends Component {
           <Route path="/" exact component={HomesList} />
           <Route path="/create" component={CreateHome} />
           <Route path="/edit/:id" component={EditHome} />
-          <Route path="/gallery" component={GalleryNavContainer} />
+          <Route path="/gallery" component={GalleryContainer} />
         </div>
        
       </Router>
