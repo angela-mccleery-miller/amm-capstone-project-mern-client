@@ -12,9 +12,6 @@ import logo from "./images/logo.png";
 import GalleryContainer from './components/gallery';
 
 
-// import NavigationContainer from "../navigation/navigation-container";
-
-
 export default class App extends Component {
   // constructor() {
   //   super();
