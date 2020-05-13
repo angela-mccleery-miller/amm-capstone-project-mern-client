@@ -47,62 +47,62 @@ export default class GallerysContainer extends Component {
 
                             <div id="homeGallery">
                             {/* <div id="homeGallery" class="topTwo"> */}
-                                <h3>The Gardabaer</h3>
+                                <h4>The Gardabaer</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
                             {/* <div id="homeGallery" class="topTwo"> */}
-                                <h3>The Glacier View</h3>
+                                <h4>The Glacier View</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Grindavik</h3>
+                                <h4>The Grindavik</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Husavik</h3>
+                                <h4>The Husavik</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Icelandia</h3>
+                                <h4>The Icelandia</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Northern Lights</h3>
+                                <h4>The Northern Lights</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Reykjavik</h3>
+                                <h4>The Reykjavik</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Selfoss</h3>
+                                <h4>The Selfoss</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Volcanic: Plan One</h3>
+                                <h4>The Volcanic: Plan One</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>
      
                             <div id="homeGallery">
-                                <h3>The Volcanic: Plan Two</h3>
+                                <h4>The Volcanic: Plan Two</h4>
                                 {/* <p>{this.props.galleryContainer}</p> */}
                                 <img src="https://source.unsplash.com/random/275x275/?home/?iceland" alt="exterior"/>
                             </div>

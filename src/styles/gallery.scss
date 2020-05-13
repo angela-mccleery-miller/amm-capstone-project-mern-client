@@ -1,4 +1,6 @@
 body {
+    width: 100vw;
+    height: 100vh;
     margin-top: 0px;
 }
 
@@ -23,20 +25,19 @@ button {
 
 }
 
-.card-wrapper {
-    // padding: 20px;
-    float: left;
-    align-content: center;
-    // display: inline;
+#homeGallery {
+    padding: 15px;
+    height: 390px;
+    width: 390px;
+    float: right;
+    
+    // align-content: center;
+    // display: inline-block;
 
     img {
-        border: thin solid black;
+        border: thin solid white;
         border-radius: 8px;
     }
     
 }
 
-h3 {
-    padding-top: 55px;
-    // align-items: center;
-}
