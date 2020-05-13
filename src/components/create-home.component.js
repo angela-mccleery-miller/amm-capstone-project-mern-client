@@ -13,8 +13,8 @@ export default class CreateHome extends Component {
         this.onChangeBathrooms = this.onChangeBathrooms.bind(this);
         this.onChangeSqfeet = this.onChangeSqfeet.bind(this);
         this.onChangeUrl = this.onChangeUrl.bind(this);
-        this.onChangeFp1_Url = this.onChangeFp1Url.bind(this);
-        this.onChangeFp2_Url = this.onChangeFp2Url.bind(this);
+        this.onChangeFp1Url = this.onChangeFp1Url.bind(this);
+        this.onChangeFp2Url = this.onChangeFp2Url.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
            
         this.state = {
@@ -65,6 +65,7 @@ export default class CreateHome extends Component {
         this.setState({
             fp1_url: e.target.value
         })
+        console.log(this.state.fp1_url)
     }
 
     onChangeFp2Url(e) {
@@ -95,11 +96,11 @@ export default class CreateHome extends Component {
             sqfeet: this.state.sqfeet,
             url: this.state.url,
             fp1_url: this.state.fp1_url,
-            fp2_url: this.state.fp2_url,
+            fp2_url: this.state.fp2_url
             // completed: this.state.completed,
         }
 
-        axios.post('http://localhost:4000/homes/add', newHome)
+        axios.post('https://am-mern-capstone-api.herokuapp.com/homes/add', newHome)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -138,6 +139,7 @@ export default class CreateHome extends Component {
                                 onChange={this.onChangeFp1Url}
                                 />
                     </div>
+
 
                    <div className="form-group">
                         <label>Floor Plan 2 URL</label>
@@ -185,34 +187,10 @@ export default class CreateHome extends Component {
                                 />
                     </div>
   
-{/* 
-                    <div className="form-group">
-                        <div className="radioButtons">
-                            <label>
-                                <input type="radio" value="oneLevel"/>
-                                One Level
-                            </label>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="radioButtons">
-                            <label>
-                                <input type="radio" value="twoStory"/>
-                                Two Story
-                            </label>
-                        </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="radioButtons">
-                            <label>
-                                <input type="radio" value="threeStory"/>
-                                Three Story
-                            </label>
-                        </div>
-                    </div> */}
+
 
                     <div className="form-group">
-                        <input type="submit" value="Create New Home" className="btn btn-primary"/>
+                        <input type="submit" value="Create New Home" className="btn1-primary"/>
                     </div>            
             </form>
           </div>

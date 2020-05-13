@@ -33,7 +33,7 @@ export default class HomesList extends Component {
     }    
 
 componentDidMount() {
-    axios.get('http://localhost:4000/homes/')
+    axios.get('https://am-mern-capstone-api.herokuapp.com/homes/')
     .then(response => {
         this.setState({homes: response.data})
     })
@@ -70,9 +70,9 @@ homeList() {
                             <th>BATHROOMS</th>
                             <th>SQUARE FEET</th>
                             <th>EDIT HOME</th>
-                            {/* <th>EXT IMG</th>
+                            <th>EXT IMG</th>
                             <th>FP 1</th>
-                            <th>FP 2</th> */}
+                            <th>FP 2</th>
                         </tr>
                     </thead>
                     <tbody>

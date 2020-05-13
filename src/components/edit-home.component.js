@@ -18,6 +18,7 @@ export default class EditHome extends Component {
         this.onChangeUrl = this.onChangeUrl.bind(this);
         this.onChangeFp1Url = this.onChangeFp1Url.bind(this);
         this.onChangeFp2Url = this.onChangeFp2Url.bind(this);
+        this.handleDelete = this.handleDelete.bind(this)
 
         // this.onChangeCompleted = this.onChangeCompleted.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -35,7 +36,7 @@ export default class EditHome extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/homes/'+this.props.match.params.id)
+        axios.get('https://am-mern-capstone-api.herokuapp.com/homes/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     planName: response.data.planName,
@@ -115,10 +116,19 @@ export default class EditHome extends Component {
             fp2_url: this.state.fp2_url,
             // completed: this.state.completed
         };
-        axios.post('http://localhost:4000/homes/update/'+this.props.match.params.id, obj)
+        axios.post('https://am-mern-capstone-api.herokuapp.com/homes/update/'+this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/');
+    }
+
+
+    handleDelete() {
+
+        axios
+             .delete(`https://am-mern-capstone-api.herokuapp.com/homes/delete/${this.props.match.params.id}`)
+             .then( response => console.log(response))
+             .catch(error => console.log(error))
     }
     
     render() {
@@ -207,7 +217,11 @@ export default class EditHome extends Component {
 
                         
                         <div className="form-group">
-                            <input type="SUBMIT" value="UPDATE HOME" className="btn btn-primary"/>
+                            <input type="SUBMIT" value="UPDATE HOME" className="btn2-primary"/>
+                        </div>
+
+                        <div className="delete-button">
+                            <button onClick={this.handleDelete}>Delete</button>
                         </div>
                 </form>
             </div>
