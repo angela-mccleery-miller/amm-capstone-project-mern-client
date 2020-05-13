@@ -1,8 +1,10 @@
-h3 {
-    padding-top: 65px;
-    // display: flex;
+body {
+    margin-top: 0px;
 }
 
+.container {
+    margin: 20px 75px;
+}
 
 .btn-primary {
     background-color: #6a8b9b;
@@ -32,4 +34,9 @@ button {
         border-radius: 8px;
     }
     
+}
+
+h3 {
+    padding-top: 55px;
+    // align-items: center;
 }
