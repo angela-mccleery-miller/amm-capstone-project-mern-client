@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./src/styles/homepage.scss";
-import "./src/styles/gallery.scss";
+import "./styles/homepage.scss";
+import "./styles/gallery.scss";
 
 import CreateHome from "./components/create-home.component";
 import EditHome from "./components/edit-home.component";
