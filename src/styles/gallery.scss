@@ -1,52 +1,90 @@
+@media (max-width: 400px) {
+    .flex-grid {
+        display: block;
+    }
+}
+
 body {
-    width: 100%;
-    height: 100%;
-    margin-top: 0px;
+    margin-top: 30px;
+    margin-bottom: 130px;
 }
 
 .container {
-    margin: 20px 75px;
+    margin-top: 45px;
+    margin-bottom: 130px;
 }
 
-
-button {
-    border-radius: 5px;
-    padding: 10px;
-    margin: 4px;
-    float: right;
-    background-color: hsl(198, 32%, 70%);
-    color: white;
-    border: thin solid rgb(78, 78, 78);
-
-
-.btn1-primary {
+.navbar {
     background-color: #6a8b9b;
-    color: white;
-    border: thin white;
-}
-
-.btn1-primary:hover {
-    background-color: #9ab5c2;
-    color: white;
-    border: thin white;
-}
+    height: 80px;
+    width: 78%;
+    font-size: 18px;
+    float: left;
+    margin-top: 85px;
+    margin-bottom: 75px;
+    margin-left: 0px;
 
 }
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 25px;
+
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color:white;
+}
+
+.navbar-item {
+    padding-left: 30px;
+    // color: whitesmoke;
+    color: white(14, 13, 13);
+    // border-bottom: 1px solid white;
+}
+
+#logoImg {
+    position: relative;
+    vertical-align: top;
+    height: 200px;
+    width: 202px;
+    border-style: none;
+    border: thin solid black;
+    border-radius: 50px;
+    padding: 0;
+    margin-top: 20px;
+    margin-right: 0px;
+    float: left;
+    z-index: 1;
+}
+
+.galleryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr 1fr;
+    grid-template-rows: (5, 1fr);
+    grid-gap: 15px;
+}
+
 
 #homeGallery {
+   display: grid;
+//    align-items: flex-start;
+    margin-top: 50px;
+    margin: 15px;
     padding: 15px;
-    height: 390px;
-    width: 390px;
-    float: right;
-    // z-index: -1;
-    
-    // align-content: center;
-    // display: inline-block;
+    height: 10%;
+    width: 10%;
+    float: center;
+}
+
+
 
     img {
+    
         border: thin solid white;
         border-radius: 8px;
     }
     
-}
+
 

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-// import CreateHome from "./create-home.component";
-// import EditHome from "./edit-home.component";
+// import CreateHome from "./create-home";
+// import EditHome from "./edit-home";
 // import SlideImages from "./components/gallery";
 
 const Home = props => (
@@ -12,6 +12,7 @@ const Home = props => (
         <td className={props.home.completed ? 'EDITED' : ''}>{props.home.bedrooms}</td>
         <td className={props.home.completed ? 'EDITED' : ''}>{props.home.bathrooms}</td>
         <td className={props.home.completed ? 'EDITED' : ''}>{props.home.sqfeet}</td>
+        <td className={props.home.completed ? 'EDITED' : ''}>{props.home.stories}</td>
         {/* <td className={props.home.completed ? 'EDITED' : ''}>{props.home.url}</td>
         <td className={props.home.completed ? 'EDITED' : ''}>{props.home.fp1_url}</td>
         <td className={props.home.completed ? 'EDITED' : ''}>{props.home.fp2_url}</td> */}
@@ -66,13 +67,14 @@ homeList() {
                     <thead>
                         <tr>
                             <th>PLAN NAME</th>
-                            <th>BEDROOMS</th>
-                            <th>BATHROOMS</th>
-                            <th>SQUARE FEET</th>
-                            <th>EDIT HOME</th>
-                            <th>EXT IMG</th>
+                            <th>BEDS</th>
+                            <th>BATHS</th>
+                            <th>SQ FEET</th>
+                            <th>LEVELS</th>
+                            <th>EDIT</th>
+                            {/* <th>EXT IMG</th>
                             <th>FP 1</th>
-                            <th>FP 2</th>
+                            <th>FP 2</th> */}
                         </tr>
                     </thead>
                     <tbody>

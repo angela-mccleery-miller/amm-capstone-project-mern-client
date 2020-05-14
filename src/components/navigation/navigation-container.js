@@ -20,9 +20,9 @@ export default class NavigationContainer extends Component {
                 </div>
 
                 <div className="links-wrapper">
-                    <Link to="/">Gallery</Link>
-                    <Link to="./homes-list.component">Inventory</Link>
-                     <Link to="./create-home.component">Create Home</Link>
+                    <Link to="./gallery">Gallery</Link>
+                    <Link to="./homes-list">Inventory</Link>
+                     <Link to="./create-home">Create Home</Link>
 
                 </div>
 

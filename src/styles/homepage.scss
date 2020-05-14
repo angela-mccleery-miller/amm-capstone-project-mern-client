@@ -1,11 +1,18 @@
+@media (max-width: 400px) {
+    .flex-grid {
+        display: block;
+    }
+}
+
 body {
-     margin-top: 15px;
+    margin-top: 0px;
     margin-bottom: 130px;
 }
 
 .container {
     margin-top: 15px;
     margin-bottom: 130px;
+    align-content: center;
 }
 
 .navbar {
@@ -18,10 +25,7 @@ body {
     margin-bottom: 75px;
     margin-left: 0px;
 
-    // li {
-    //     color: whitesmoke;
-    // }
-
+ 
 }
 
 .navbar-light .navbar-brand {
@@ -37,8 +41,10 @@ body {
 .navbar-item {
     padding-left: 30px;
     // color: whitesmoke;
-    color: rgb(14, 13, 13);
+    color: white(14, 13, 13);
+    // border-bottom: 1px solid white;
 
+  
 }
 
 #logoImg {

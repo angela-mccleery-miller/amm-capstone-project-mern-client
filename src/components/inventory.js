@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import CreateHome from "./components/create-home.component";
-import EditHome from "./components/edit-home.component";
-import HomesList from "./components/homes-list.component";
+import CreateHome from "./components/create-home";
+import EditHome from "./components/edit-home";
+import HomesList from "./components/homes-list";
+
 // import App from "../App";
 
 class LandingPage extends Component {
@@ -22,11 +23,11 @@ class LandingPage extends Component {
               <ul className="navbar-nav mr-auto">
 
                 <li className="navbar-item">
-                  <Link to="/homes-list.component" className="nav-link">Inventory</Link>
+                  <Link to="/homes-list" className="nav-link">Inventory</Link>
                 </li> 
 
                 <li className="navbar-item">
-                  <Link to="/create-home.component" className="nav-link">Create Home</Link>
+                  <Link to="/create-home" className="nav-link">Create Home</Link>
                 </li>
 
                 <li className="navbar-item">
@@ -38,10 +39,10 @@ class LandingPage extends Component {
           </nav>
           
         
-          <Route exact path="/homes-list.component/:id" component={HomesList} />
-          <Route path="/edit-home.component/:id" component={EditHome} />
-          <Route path="/create-home.component" component={CreateHome} />
-          {/* <Route path="/gallery" component={Gallery} /> */}
+          <Route exact path="/homes-list/:id" component={HomesList} />
+          <Route path="/edit-home/:id" component={EditHome} />
+          <Route path="/create-home" component={CreateHome} />
+          <Route path="/gallery" component={Gallery} />
         </div>
        
       </Router>

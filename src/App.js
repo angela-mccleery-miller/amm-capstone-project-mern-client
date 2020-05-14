@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./styles/homepage.scss";
-import "./styles/gallery.scss";
+// import "./styles/inventory.scss";
+// import "./styles/gallery.scss";
+import "./styles/main.scss";
 
-import CreateHome from "./components/create-home.component";
-import EditHome from "./components/edit-home.component";
-import HomesList from "./components/homes-list.component";
+import CreateHome from "./components/create-home";
+import EditHome from "./components/edit-home";
+import HomesList from "./components/homes-list";
 import logo from "./images/logo.png";
 import GalleryContainer from './components/gallery';
 

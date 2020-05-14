@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-// import SlideImages from "./components/gallery";
-// import CreateHome from "./create-home.component";
-// import HomesList from "./homes-list.component";
+// import CreateHome from "./create-home";
+// import HomesList from "./homes-list";
 // import GalleryInfo from "./gallery"
 
 export default class EditHome extends Component {
@@ -15,6 +14,7 @@ export default class EditHome extends Component {
         this.onChangeBedrooms = this.onChangeBedrooms.bind(this);
         this.onChangeBathrooms = this.onChangeBathrooms.bind(this);
         this.onChangeSqfeet = this.onChangeSqfeet.bind(this);
+        this.onChangeStories = this.onChangeStories.bind(this);
         this.onChangeUrl = this.onChangeUrl.bind(this);
         this.onChangeFp1Url = this.onChangeFp1Url.bind(this);
         this.onChangeFp2Url = this.onChangeFp2Url.bind(this);
@@ -28,6 +28,7 @@ export default class EditHome extends Component {
             bedrooms: '',
             bathrooms: '',
             sqfeet: '',
+            stories: '',
             url: '',
             fp1_url: '',
             fp2_url: '',
@@ -43,6 +44,7 @@ export default class EditHome extends Component {
                     bedrooms: response.data.bedrooms,
                     bathrooms: response.data.bathrooms,
                     sqfeet: response.data.sqfeet,
+                    stories: response.data.stories,
                     url: response.data.url,
                     fp1_url: response.data.fp1_url,
                     fp2_url: response.data.fp2_url,
@@ -79,6 +81,12 @@ export default class EditHome extends Component {
         });
     }
 
+    onChangeStories(e) {
+        this.setState({
+            stories: e.target.value
+        });
+    }
+
     onChangeUrl(e) {
         this.setState({
             url: e.target.value
@@ -111,6 +119,7 @@ export default class EditHome extends Component {
             bedrooms: this.state.bedrooms,
             bathrooms: this.state.bathrooms,
             sqfeet: this.state.sqfeet,
+            stories: this.state.stories,
             url: this.state.url,
             fp1_url: this.state.fp1_url,
             fp2_url: this.state.fp2_url,
@@ -122,6 +131,16 @@ export default class EditHome extends Component {
         this.props.history.push('/');
     }
 
+
+    handleUpdate() {
+
+        axios
+             .patch(`https://am-mern-capstone-api.herokuapp.com/homes/patch/${this.props.match.params.id}`)
+             .then( response => console.log(response))
+             .catch(error => console.log(error))
+    }
+
+    
 
     handleDelete() {
 
@@ -173,6 +192,16 @@ export default class EditHome extends Component {
                     </div>
 
                     <div className="form-group">
+                        <label>Stories: </label>
+                        <input type="text"
+                                className="form-control"
+                                value={this.state.stories}
+                                onChange={this.onChangeStories}
+                                />
+                    </div>
+
+
+                    <div className="form-group">
                         <label>Home Image URL: </label>
                         <input type="text"
                                 className="form-control"
@@ -199,6 +228,14 @@ export default class EditHome extends Component {
                                 />
                     </div>
 
+                <div className="edit-home-buttons">
+                    <div>
+                            <button className="btn-update" onClick={this.handleUpdate}>UPDATE This Home</button>
+                    </div>
+
+                    <br/>
+                                  
+
                     {/* <div>
                         <div className="form-check">
                             <input type="checkbox"
@@ -216,13 +253,19 @@ export default class EditHome extends Component {
                         <br/>
 
                         
-                        <div className="form-group">
-                            <input type="SUBMIT" value="UPDATE HOME" className="btn2-primary"/>
+                        {/* <div className="update-button">
+                            <input type="SUBMIT" value="UPDATE HOME" className="btn-update"/>
+                        </div> */}
+
+                        {/* <div className="update-button">
+                            <button onClick={this.handleUpdate}>Update</button>
+                        </div> */}
+
+                        <div>
+                            <button className="btn-delete" onClick={this.handleDelete}>! DELETE This Home !</button>
                         </div>
 
-                        <div className="delete-button">
-                            <button onClick={this.handleDelete}>Delete</button>
-                        </div>
+                    </div>
                 </form>
             </div>
         )

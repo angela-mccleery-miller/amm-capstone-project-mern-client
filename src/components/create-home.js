@@ -12,6 +12,7 @@ export default class CreateHome extends Component {
         this.onChangeBedrooms = this.onChangeBedrooms.bind(this);
         this.onChangeBathrooms = this.onChangeBathrooms.bind(this);
         this.onChangeSqfeet = this.onChangeSqfeet.bind(this);
+        this.onChangeStories = this.onChangeStories.bind(this);
         this.onChangeUrl = this.onChangeUrl.bind(this);
         this.onChangeFp1Url = this.onChangeFp1Url.bind(this);
         this.onChangeFp2Url = this.onChangeFp2Url.bind(this);
@@ -23,6 +24,7 @@ export default class CreateHome extends Component {
             bedrooms: '',
             bathrooms: '',
             sqfeet: '',
+            stories: '',
             url: '',
             fp1_url: '',
             fp2_url: '',
@@ -55,6 +57,12 @@ export default class CreateHome extends Component {
         })
     }
 
+    onChangeStories(e) {
+        this.setState({
+            stories: e.target.value
+        })
+    }
+
     onChangeUrl(e) {
         this.setState({
             url: e.target.value
@@ -82,6 +90,7 @@ export default class CreateHome extends Component {
         console.log(`Number of Bedrooms: ${this.state.bedrooms}`);
         console.log(`Number of Bathrooms: ${this.state.bathrooms}`);
         console.log(`Square Footage: ${this.state.sqfeet}`)
+        console.log(`Stories: ${this.state.stories}`)
         console.log(`Home Image: ${this.state.url}`)
         console.log(`Floor Plan 1: ${this.state.fp1_url}`)
         console.log(`Floor Plan 2: ${this.state.fp2_url}`)
@@ -94,6 +103,7 @@ export default class CreateHome extends Component {
             bedrooms: this.state.bedrooms,
             bathrooms: this.state.bathrooms,
             sqfeet: this.state.sqfeet,
+            stories: this.state.stories,
             url: this.state.url,
             fp1_url: this.state.fp1_url,
             fp2_url: this.state.fp2_url
@@ -109,6 +119,7 @@ export default class CreateHome extends Component {
             bedrooms: '',
             bathrooms: '',
             sqfeet: '',
+            stories: '',
             url: '',
             fp1_url: '',
             fp2_url: '',
@@ -187,10 +198,19 @@ export default class CreateHome extends Component {
                                 />
                     </div>
   
+                    <div className="form-group">
+                        <label>Stories</label>
+                        <input type="text"
+                                className="form-control"
+                                value={this.state.stories}
+                                onChange={this.onChangeStories}
+                                />
+                    </div>
+  
 
 
                     <div className="form-group">
-                        <input type="submit" value="Create New Home" className="btn1-primary"/>
+                        <input type="submit" value="CREATE New Home" className="btn-create"/>
                     </div>            
             </form>
           </div>

@@ -1,7 +1,7 @@
 import React from "react";
 
 const Home = props => {
-    const { id, planName, bedrooms, bathroom, sqfeet, url, fp1_url, fp2_url } = props.home
+    const { id, planName, bedrooms, bathroom, sqfeet, stories, url, fp1_url, fp2_url } = props.home
     return (
         <div key={id} className="home-container">
           <div className="home-wrapper">
@@ -18,4 +18,3 @@ const Home = props => {
 }
 
 export default Home;
-© 2020 GitHub, Inc.
