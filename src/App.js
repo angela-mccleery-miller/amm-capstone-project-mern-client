@@ -12,6 +12,8 @@ import HomesList from "./components/homes-list";
 import logo from "./images/logo.png";
 import GalleryContainer from './components/gallery';
 
+import "./styles/main.scss";
+
 
 export default class App extends Component {
   // constructor() {
