@@ -17,7 +17,7 @@ class LandingPage extends Component {
          
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             
-          <Link to="/homepage" className="navbar-brand">Icelandic Custom Homes</Link>
+          <Link to="/about-us" className="navbar-brand">Icelandic Custom Homes</Link>
 
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav mr-auto">
